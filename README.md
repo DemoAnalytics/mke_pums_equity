@@ -76,10 +76,3 @@ Individuals and households are categorized using an **intersectional framework**
 Housing cost burden is calculated using **annual household income and annualized housing costs**, consistent with Census and HUD guidance.
 
 ---
-
-## Reproducibility
-
-The full analysis pipeline can be run end-to-end using a single script:
-
-```r
-source("scripts/run_all.R")
