@@ -89,7 +89,7 @@ This repository is structured to support adaptation to other counties or metro a
 - Outputs can be mapped and styled in QGIS for client-ready figures
 ---
 
-Contact
+## Contact
 
 If you’re a public agency, nonprofit, or consulting firm that needs demographic and equity analysis to support planning or grant work, feel free to reach out:
 Chuck Brown — demo-analytics.com
