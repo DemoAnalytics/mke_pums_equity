@@ -2,26 +2,29 @@
 
 ## Overview
 
-This repository contains a fully reproducible analysis of **poverty and housing cost burden in Milwaukee County**, using the **American Community Survey (ACS) Public Use Microdata Sample (PUMS)**.
+This repository contains a fully reproducible equity and needs analysis of poverty and housing cost burden in Milwaukee County, using the American Community Survey (ACS) Public Use Microdata Sample (PUMS). It demonstrates how Census microdata can be used to quantify compounding disadvantage across overlapping characteristics (race/ethnicity, disability status, nativity) in ways that are not possible with standard pre-tabulated ACS tables.
 
-The project demonstrates how Census microdata can be used to examine **compounding disadvantage** across overlapping characteristics — including **race and ethnicity, disability status, and nativity** — in ways that are not possible using standard pre-tabulated Census tables.
-
-All data processing, weighting, analysis, and visualization steps are documented and automated in R. The complete codebase is included to ensure transparency and reproducibility.
+All data processing, weighting, analysis, and visualization steps are automated in R. The complete codebase is included to support transparency and reproducibility.
 
 ---
 
-## Purpose
+## Why this matters (practical applications)
 
-Nonprofits and county agencies frequently rely on Census data to support:
-- equity-focused planning
-- grant applications and reporting
-- program targeting and evaluation
+Nonprofits, local governments, and consulting firms frequently rely on Census data to support:
+<ul>
+<li>equity-focused planning and program design</li>
 
-While ACS summary tables are appropriate for many uses, they are limited when the research question involves **multiple interacting characteristics**. This project uses microdata to illustrate how poverty and housing stress are distributed across **intersectional groups**, providing insight that is directly relevant to state-funded, county-administered programs.
+<li>grant applications, needs statements, and reporting</li>
+
+<li>program targeting and service area prioritization</li>
+
+<li>evaluation and performance measurement</li>
+</ul>
+While standard ACS summary tables are appropriate for many uses, they are limited when the research question involves multiple interacting characteristics (e.g., race × disability × nativity). This project shows how microdata can produce policy-relevant estimates that reveal disparities hidden in standard tables.
 
 ---
 
-## Key Questions
+## Key Questions answered
 
 - How do poverty rates differ across intersectional groups defined by race/ethnicity, disability, and nativity?
 - Which renter households experience the highest levels of housing cost burden?
@@ -39,22 +42,15 @@ While ACS summary tables are appropriate for many uses, they are limited when th
 
 ---
 
-## Geographic Methodology
+## Geographic methodology (PUMA → County estimation)
 
-### Public Use Microdata Areas (PUMAs)
+Because ACS microdata is released at the Public Use Microdata Area (PUMA) level (for privacy), it does not align perfectly with county boundaries.
 
-For privacy protection, Census microdata is released at the **Public Use Microdata Area (PUMA)** level rather than at finer geographies such as census tracts or counties. Each PUMA contains approximately 100,000 or more residents.
+To approximate Milwaukee County estimates, this project applies official geographic allocation factors from the Missouri Census Data Center. These factors represent the share of each PUMA’s population located within Milwaukee County.
 
-Milwaukee County does not align perfectly with a single PUMA.
+Survey weights are adjusted using these allocation factors to produce Milwaukee County–specific estimates.
 
-### County-Level Estimation
-
-To approximate Milwaukee County results, this project applies **official geographic allocation factors** from the Missouri Census Data Center. These factors indicate the share of each PUMA’s population located within Milwaukee County.
-
-Survey weights are adjusted using these allocation factors to produce **Milwaukee County–specific estimates**.
-
-> Results should be interpreted as statistically robust estimates intended to identify patterns and disparities, not as exact administrative counts.
-
+Interpretation note: Results should be interpreted as statistically robust estimates intended to identify patterns and disparities—not as exact administrative counts.
 ---
 
 ## Analytical Approach
@@ -76,3 +72,25 @@ Individuals and households are categorized using an **intersectional framework**
 Housing cost burden is calculated using **annual household income and annualized housing costs**, consistent with Census and HUD guidance.
 
 ---
+## How to use / adapt this workflow
+This repository is structured to support adaptation to other counties or metro areas by updating:
+
+- the PUMA geography correspondence inputs
+
+- the target county or region definition
+
+- the population group and outcome specifications
+
+---
+## Tools
+
+- R: tidyverse, survey, srvyr, tidycensus, sf
+
+- Outputs can be mapped and styled in QGIS for client-ready figures
+---
+
+Contact
+
+If you’re a public agency, nonprofit, or consulting firm that needs demographic and equity analysis to support planning or grant work, feel free to reach out:
+Chuck Brown — demo-analytics.com
+
