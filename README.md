@@ -6,6 +6,11 @@ This repository contains a fully reproducible equity and needs analysis of pover
 
 All data processing, weighting, analysis, and visualization steps are automated in R. The complete codebase is included to support transparency and reproducibility.
 
+## Full Report (PDF)
+📄 **Milwaukee County Equity Analysis Report:**  
+[Download the full report (PDF)](https://github.com/DemoAnalytics/mke_pums_equity/tree/main/report)
+
+
 ---
 
 ## Why this matters (practical applications)
